@@ -6,5 +6,6 @@ class SessionsController < ApplicationController
   end
 
   def index
+    render 'index'
   end
 end
