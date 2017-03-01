@@ -5,8 +5,25 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+
+<% if current_page?('/sessions') || current_page?('/ninjas') %>
+   <%= render "layouts/login_header" %>
+<% else %>
+   <%= render 'layouts/header' %>
+<% end %>
+<% if flash[:success] %>
+	<p><%= flash[:success] %></p>
+<% elsif flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <p><%= e %></p>
+  <% end %>
+<% end %>
+<% if current_user%>
+<a data-method="delete" href="/sessions">Log Out</a>
+<% end %>
 
 <%= yield %>
 

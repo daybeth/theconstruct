@@ -1,11 +1,21 @@
 class SessionsController < ApplicationController
+  def index
+  end
   def create
+  	ninja = Ninja.find_by(email: params[:email])
+
+  	if ninja && ninja.authenticate(params[:password])
+  		session[:user_id] = ninja.id
+  		redirect_to "/projects"
+  	else
+  		flash[:errors] = ["Invalid combination"]
+  		redirect_to :back
+  	end
   end
 
   def destroy
-  end
+  	reset_session  	
+  	redirect_to :root
 
-  def index
-    render 'index'
   end
 end

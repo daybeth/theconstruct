@@ -1,2 +1,9 @@
-<h1>Sessions#index</h1>
-<p>Find me in app/views/sessions/index.html.erb</p>
+<form action="/sessions" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+  <p><label for="email">Email</label>
+  <input  name="email" type="email" id="email" placeholder="Email"></p>
+  <p><label for="password">Password</label>
+  <input name="password" type="password" id="password" placeholder="Password"></p>
+  <input type="submit" value="Login">
+</form>
+<a href="/ninjas">Register</a>
