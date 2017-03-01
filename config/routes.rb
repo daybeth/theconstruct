@@ -6,12 +6,12 @@ Rails.application.routes.draw do
 
   delete 'sessions' => 'sessions#destroy'
 
-  get 'sessions/index'
+  get 'sessions' => 'sessions#index'
 
 
   # Ninja routes
 
-  get 'ninjas/new'
+  get 'ninjas' => 'ninjas#new'
 
   post 'ninjas' => 'ninjas#create'
 
@@ -23,9 +23,11 @@ Rails.application.routes.draw do
 
   delete 'ninjas/:id' => 'ninjas#destroy'
 
-
+#28739D
   # Project Routes
-  get 'projects/index'
+  get 'projects' => 'projects#index'
+
+  get 'projects/new' => 'projects#new'
 
   post 'projects' => 'projects#create'
 
@@ -46,7 +48,7 @@ Rails.application.routes.draw do
 
   # Messages Routes
 
-  get 'messages/index'
+  get 'messages' => 'messages#index'
 
   post 'messages' => 'messages#create'
 
