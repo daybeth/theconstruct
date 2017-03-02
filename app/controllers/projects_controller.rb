@@ -43,4 +43,19 @@ class ProjectsController < ApplicationController
 
   def destroy
   end
+  def swift
+    
+  end
+   def php
+    
+  end
+   def ror
+    
+  end
+   def csharp
+    
+  end
+   def js
+    
+  end
 end

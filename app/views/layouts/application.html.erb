@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<% if current_page?('/sessions') || current_page?('/ninjas') %>
+<% if current_page?('/sessions') || current_page?('/ninjas') || current_page?('/') %>
    <%= render "layouts/login_header" %>
 <% else %>
    <%= render 'layouts/header' %>

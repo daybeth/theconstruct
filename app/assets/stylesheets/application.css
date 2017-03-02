@@ -98,7 +98,7 @@ height: 55px
  }
  #user_info{
  	width: 180px;
- 	height: 650px;
+ 	height: 100%;
  	background-color: #1da4f2;
  	font-size: 10px;
  	line-height: 20px;
@@ -125,12 +125,12 @@ height: 55px
  }
 
  #recent_project, #project_name, #recent_profile{
- 	margin-top: -600px;
+ 	margin-top: -550px;
  	margin-left: 400PX;
   font-size: 13px;
  }
  #project_holder{
- 	width: 800px;
+ 	width: 70%;
  	height: 400px;
 /* 	background-color: #f1f7ad;*/
   background: rgba(255,255,255,0.4);
@@ -147,7 +147,7 @@ height: 55px
  }
  #new_project_link{
   display: inline-block;
-  margin-left: 300px;
+  margin-left: 200px;
   color: white
  }
  #recent_p_title{
@@ -164,4 +164,8 @@ height: 55px
  	opacity: .8;
  	border-radius: 20px;
  	padding: 10px;
+ }
+  #space{
+  margin-top: 50px;
+  margin-left: 400px;
  }

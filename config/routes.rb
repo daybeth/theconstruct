@@ -41,6 +41,16 @@ Rails.application.routes.draw do
 
   delete 'projects/:id' => 'projects#destroy'
 
+  get 'projects/swift' => 'projects#swift'
+
+  get 'projects/php' => 'projects#php'
+
+  get 'projects/js' => 'projects#js'
+
+  get 'projects/ror' => 'projects#ror'
+  
+  get 'projects/csharp' => 'projects#csharp'
+
 
   # Comments Routes
 

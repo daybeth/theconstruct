@@ -8,7 +8,7 @@ class NinjasController < ApplicationController
 
    if ninja.save
       flash[:success] = "You have registered successfully. Please Log in"
-      redirect_to "/projects"
+      redirect_to "/sessions"
     else
       flash[:errors] = ninja.errors.full_messages
       redirect_to :back
@@ -41,6 +41,6 @@ class NinjasController < ApplicationController
   end
   private
   def ninja_params
-    params.require(:ninja).permit(:first_name, :last_name, :location :ninja_name, :email, :password, :password_confirmation)
+    params.require(:ninja).permit(:first_name, :last_name, :location, :ninja_name, :email, :password, :password_confirmation)
   end
 end
