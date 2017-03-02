@@ -6,10 +6,106 @@
  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
  *
  *= require_tree .
  *= require_self
  */
+ body{
+ 	background-color: #d6d7d8;
+ 	font-family: 'Press Start 2P', cursive;
+ 	background-image: url("mainBKGD.gif");
+ 	background-repeat: no-repeat;
+ 	margin: 0 auto;
+  }
+  #logo{
+  	text-align: center;
+  	margin-left: 70px;
+  }
+ #main{
+    width: 1280px;
+    height: 720px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  #index{
+ 	width: 300px;
+ 	height: 100px;
+ 	text-align: center;
+ 	margin: 0 auto;
+ 	opacity: .8;
+ 	margin-top: 20px;
+ 	color: white;
+ 	background-image: url("login.png");
+    background-repeat: no-repeat;
+    background-size: 350px 200px;
+    padding: 20px;
+  	border: 2px solid;
+    border-radius: 25px;
+ }
+ #create{
+ 	margin: auto;
+ 	text-align: center;
+ 	border: 2px solid white;
+ 	width: 400px;
+ 	height: 240px;
+ 	color: blue;
+ 	background-color: white;
+ 	opacity: .7;
+ 	background-image: url("login.png");
+    background-repeat: no-repeat;
+    background-size: 450px 300px;
+    padding: 20px;
+  	border: 2px solid;
+    border-radius: 25px;
+    margin-top: 60px;
+ }
+ #dashboardtop{
+ 	height: 70px;
+ 	width: 1280px;
+ 	background-color: #107099;
+ }
+ #construct{
+ 	margin-left: 20px;
+ 	margin-right: 100px;
+ 	width: 300px;
+ }
+ #swift, #ruby, #php, #js, #csharp, #python{
+ 	margin-left: 10px;
+ 	margin-right: 10px;
+ }
+ #user_info{
+ 	width: 220px;
+ 	height: 650px;
+ 	background-color: #1da4f2;
+ 	font-size: 10px;
+ 	line-height: 20px;
+ 	color: white;
+ }
+ #your_name{
+ 	font-size: 14px;
+ 	margin: 0px;
+ 	padding: 0px;
+ }
+ #recent_project, #project_name, #recent_profile{
+ 	margin-top: -600px;
+ 	margin-left: 400PX;
+ }
+ #project_holder{
+ 	width: 700px;
+ 	height: 400px;
+ 	background-color: #f1f7ad;
+ 	opacity: .8;
+ 	border-radius: 20px;
+ 	padding: 10px;
+ }
+ #profile_holder{
+ 	width: 400px;
+ 	height: 400px;
+ 	background-color: #f1f7ad;
+ 	opacity: .8;
+ 	border-radius: 20px;
+ 	padding: 10px;
+ }
