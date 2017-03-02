@@ -3,6 +3,9 @@ class ProjectsController < ApplicationController
   # before_action :require_current_user ,only:[:edit,:update, :destroy]
   def index
     @projects = Project.all
+    @ninja = Ninja.find(session[:user_id])
+    @own_projects = Project.where(ninja_id:@ninja)
+    @team_projects = Team.where(ninja_id:@ninja)
   end
 
   def new
@@ -26,6 +29,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @ninja = Ninja.find(session[:user_id])
     @project = Project.find(params[:id])
     @comments = Comment.all
     @creator = @project.ninja_id

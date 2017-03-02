@@ -2,9 +2,11 @@
 <html>
 <head>
   <title>Construct</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
 </head>
 <body>
@@ -13,6 +15,7 @@
    <%= render "layouts/login_header" %>
 <% else %>
    <%= render 'layouts/header' %>
+   <%= render 'layouts/profile' %>
 <% end %>
 <% if flash[:success] %>
 	<p><%= flash[:success] %></p>
@@ -21,9 +24,7 @@
     <p><%= e %></p>
   <% end %>
 <% end %>
-<% if current_user%>
-<a data-method="delete" href="/sessions">Log Out</a>
-<% end %>
+
 
 <%= yield %>
 
