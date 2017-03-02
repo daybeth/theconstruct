@@ -1,5 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
+/* * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
@@ -13,93 +12,150 @@
  *= require_tree .
  *= require_self
  */
+ 
  body{
  	background-color: #d6d7d8;
  	font-family: 'Press Start 2P', cursive;
  	background-image: url("mainBKGD.gif");
+  background-size: 100%;
  	background-repeat: no-repeat;
  	margin: 0 auto;
-  }
-  #logo{
-  	text-align: center;
-  	margin-left: 70px;
+  width: 100%;
+  height: 100%;
+
   }
  #main{
-    width: 1280px;
-    height: 720px;
+    width: 100%;
+    height: 100%;
     text-align: center;
     margin: 0 auto;
   }
+  #logo{
+    margin-left: 220px;
+  }
   #index{
  	width: 300px;
- 	height: 100px;
+ 	height: 180px;
  	text-align: center;
  	margin: 0 auto;
  	opacity: .8;
- 	margin-top: 20px;
- 	color: white;
+ 	margin-top: 15px;
+ 	color:white;
  	background-image: url("login.png");
-    background-repeat: no-repeat;
-    background-size: 350px 200px;
-    padding: 20px;
-  	border: 2px solid;
-    border-radius: 25px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 10px 10px;
+/*	border: 2px solid;*/
+  border-radius: 25px;
+ }
+ .log_reg_form{
+  margin-bottom: 10px
  }
  #create{
  	margin: auto;
  	text-align: center;
- 	border: 2px solid white;
- 	width: 400px;
- 	height: 240px;
- 	color: blue;
- 	background-color: white;
- 	opacity: .7;
+ 	width: 300px;
+ 	height: 330px;
+ 	color: white;
+ 	opacity: .8;
  	background-image: url("login.png");
-    background-repeat: no-repeat;
-    background-size: 450px 300px;
-    padding: 20px;
-  	border: 2px solid;
-    border-radius: 25px;
-    margin-top: 60px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding:15px 20px;
+	/*border: 2px solid blue;*/
+  border-radius: 25px;
+ }
+ .link{
+  font-size: 15px;
+ }
+ .log_reg_form input{
+  margin-bottom: 5px;
+  height: 20px;
+  font-size: 10px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
  }
  #dashboardtop{
  	height: 70px;
- 	width: 1280px;
+ 	width: 100%;
  	background-color: #107099;
+  padding-bottom: 5px;
  }
  #construct{
  	margin-left: 20px;
- 	margin-right: 100px;
+ 	margin-right: 230px;
  	width: 300px;
+  height: 60px;
  }
+
  #swift, #ruby, #php, #js, #csharp, #python{
- 	margin-left: 10px;
- 	margin-right: 10px;
+position: relative;
+margin-left: 30px;
+margin-right: 20px;
+width: 55px;
+height: 55px
+/*margin-top:0px;*/
  }
  #user_info{
- 	width: 220px;
+ 	width: 180px;
  	height: 650px;
  	background-color: #1da4f2;
  	font-size: 10px;
  	line-height: 20px;
  	color: white;
+  padding: 15px;
  }
  #your_name{
- 	font-size: 14px;
- 	margin: 0px;
- 	padding: 0px;
+ 	font-size: 15px;
+  text-align: center
  }
+ #photo{
+  margin-left: 10px;
+ }
+ #margin_botton{
+  margin-bottom: 15px;
+ }
+ #mail, #git,#CD {
+  width: 60px;
+  height: 60px;
+  margin-left: 50px;
+ }
+ #CD{
+  margin-top: 10px;
+ }
+
  #recent_project, #project_name, #recent_profile{
  	margin-top: -600px;
  	margin-left: 400PX;
+  font-size: 13px;
  }
  #project_holder{
- 	width: 700px;
+ 	width: 800px;
  	height: 400px;
- 	background-color: #f1f7ad;
- 	opacity: .8;
+/* 	background-color: #f1f7ad;*/
+  background: rgba(255,255,255,0.4);
+/* 	opacity: .5;*/
  	border-radius: 20px;
- 	padding: 10px;
+ 	padding: 20px 10px;
+  margin-bottom: 10px;
+ }
+ a{
+  color: white
+ }
+ .white_font{
+  color: white;
+ }
+ #new_project_link{
+  display: inline-block;
+  margin-left: 300px;
+  color: white
+ }
+ #recent_p_title{
+  display: inline-block;
+ }
+ #project_holder p, a{
+  opacity: none;
+    font-family: 'Press Start 2P', cursive;
  }
  #profile_holder{
  	width: 400px;
