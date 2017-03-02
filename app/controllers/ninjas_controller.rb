@@ -6,7 +6,7 @@ class NinjasController < ApplicationController
   def create
     ninja = Ninja.new(ninja_params)
 
-   if ninja.save 
+   if ninja.save
       flash[:success] = "You have registered successfully. Please Log in"
       redirect_to :root
     else
@@ -14,13 +14,23 @@ class NinjasController < ApplicationController
       redirect_to :back
     end
   end
+
   def update
+    ninja = Ninja.find(id:session[:user_id])
+    if ninja.update(ninja_params)
+       flash[:success] = "Ninja Updated!"
+       redirect_to '/ninjas/<%=ninja.id%>'
+     else
+       flash[:errors] = ninja.errors.full_messages
+       redirect_to :back
+     end
   end
 
   def destroy
   end
 
   def edit
+    @ninja = Ninja.find(params[:id])
   end
 
   def show
@@ -31,6 +41,6 @@ class NinjasController < ApplicationController
   end
   private
   def ninja_params
-    params.require(:ninja).permit(:first_name, :last_name, :ninja_name, :email, :password, :password_confirmation)    
+    params.require(:ninja).permit(:first_name, :last_name, :location :ninja_name, :email, :password, :password_confirmation)
   end
 end

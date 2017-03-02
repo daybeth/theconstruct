@@ -26,4 +26,6 @@ class MessagesController < ApplicationController
 
   def destroy
   end
+
+  # This is a comment
 end
