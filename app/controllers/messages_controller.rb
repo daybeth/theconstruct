@@ -21,6 +21,9 @@ class MessagesController < ApplicationController
   def show
     ninja = Ninja.find(session[:user_id])
     @messages = Message.where(receiver_id:ninja.id)
+        @ninja = Ninja.find(session[:user_id])
+    @own_projects = Project.where(ninja_id:@ninja)
+    @team_projects = Team.where(ninja_id:@ninja)
 
   end
 

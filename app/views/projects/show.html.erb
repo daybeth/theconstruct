@@ -1,27 +1,14 @@
-<div id="user_info">
-	<h1 id="your_name">Your Name Here</h1>
-	<a href="/index" class="transition"><%= image_tag("photoholder.jpg", height: '200', width: '200', :alt => "photo", :id=>"photo") %></a><br>
-		<label>Name: </label><br>
-		<label>Last Name: </label><br>
-		<label>Location: </label><br>
-		<label>Completed Projects: </label><br>
-		<label>Live Projects: </label><br>
-	<a href="/index" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br>
-	<a href="https://github.com/" class="transition"><%= image_tag("github.gif", height: '80', width: '80', :alt => "git", :id=>"git") %></a><br>
-	<a href="https://learn.codingdojo.com/signin#" class="transition"><%= image_tag("CD.gif", height: '100', width: '100', :alt => "CD", :id=>"CD") %></a><br>
-</div>
-
-<div id="project_name">
+ <div id="project_name">
 	<h2>Project Name:<%= @project.name%> </h2>
 
 <div id="project_holder">
-	<p>By <a href="/ninjas/<%=@project.ninja.id%>"><b><%=@project.ninja.ninja_name%></b></a></p>
+	<p>By <a  class="transition" href="/ninjas/<%=@project.ninja.id%>"><b><%=@project.ninja.ninja_name%></b></a></p>
 	<b>Description</b>
 	<p><%= @project.description%></p>
 	<h1>Wireframe</h1>
-	<p><a href="/messages/<%=@creator%>/new">Send a message to Join team</a></p>
+	<p><a  class="transition" href="/messages/<%=@creator%>/new">Send a message to Join team</a></p>
 	<b>Leave a comment</b>
-	<form action="/comments" method="post">
+	<form  class="transition" action="/comments" method="post">
 		<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
 		<p><label for="comment"></label>
 		<textarea name="content" id="comment" cols="30" rows="5"></textarea></p>
@@ -32,6 +19,6 @@
 <p><%=c.ninja.ninja_name%> said, <%=c.content%><%=c.created_at%></p>
 <%end%>
 
-<a href="/projects">Back</a>
+<a  class="transition" href="/projects">Back</a>
 </div>
 </div>

@@ -1,4 +1,7 @@
-	<h1 id="your_name"><a href="/ninjas/<%= @ninja.id%>" class="transition"><%=@ninja.ninja_name%></a></h1>
+<div id="project_name">
+	
+<div id="project_holder">
+<h1 id="your_name"><%=@ninja.ninja_name%></h1>
 	<a href="/ninjas/<%= @ninja.id%>" class="transition"><%= image_tag("photoholder.jpg", height: '150', width: '150', :alt => "photo", :id=>"photo") %></a><br>
 		<p>Name:<a><%=@ninja.first_name%></a></p>
 		<p>Last Name:<%=@ninja.last_name%></p>
@@ -6,3 +9,7 @@
 		<p>Own Projects:<%=@own_projects.count%></p>
 		<p id="margin_botton">On team Projects:<%=@team_projects.count%></p>
 	<a href="/messages/<%=@ninja.id%>" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br>
+	<a href="/projects">Back</a>
+	</div>
+
+	</div>

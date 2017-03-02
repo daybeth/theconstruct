@@ -1,23 +1,27 @@
-<h3>Create a Project</h3>
-<form class="form-horizontal" action="/projects" method="post">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
-    <p><label for="name">Project Name</label>
-    <input  name="name" type="text" id="name" placeholder="project Name"></p>
-   <p><label for="name">Stack</label>
-   <select name="stack" id="">
-	   	<option value="Ruby">Ruby</option>
-	   	<option value="Mean">Mean</option>
-	   	<option value="python">Python</option>
-	   	<option value="ios">IOS</option>
-	   	<option value="Ruby">Ruby</option>
-	   	<option value="php">PHP</option>
-   </select></p>
-    <p><label for="description">Description</label>
-   	<textarea name="description" id="" cols="30" rows="10"></textarea></p>
-    <p><label for="progress">Progress</label>
-    <input  name="progress" type="number" id="progress" placeholder="progress">
-    <p><label for="wireframe">wireframe</label>
-    <input name="wireframe" type="text" id="wireframe" placeholder="wireframe"></p>
-    <input type="submit" value="Create Project">
-</form>
-<a href="/projects">Back</a>
+<div id="project_name">
+  <h3>Create a Project</h3>
+  <div id="project_holder">
+  <form class="form-horizontal" action="/projects" method="post">
+  	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+      <p><label for="name">Project Name</label>
+      <input  name="name" type="text" id="name" placeholder="project Name"></p>
+     <p><label for="name">Stack</label>
+     <select name="stack" id="">
+  	   	<option value="Ruby">Ruby</option>
+  	   	<option value="Mean">Mean</option>
+  	   	<option value="Python">Python</option>
+  	   	<option value="IOS">IOS</option>
+  	   	<option value="Ruby">Ruby</option>
+  	   	<option value="PHP">PHP</option>
+     </select></p>
+      <p><label for="description">Description</label>
+     	<textarea name="description" id="" cols="30" rows="10"></textarea></p>
+      <p><label for="progress">Progress</label>
+      <input  name="progress" type="number" id="progress" placeholder="progress">
+      <p><label for="wireframe">wireframe</label>
+      <input name="wireframe" type="text" id="wireframe" placeholder="wireframe"></p>
+      <input type="submit" value="Create Project">
+  </form>
+  <a href="/projects">Back</a>
+  </div>
+  </div>
