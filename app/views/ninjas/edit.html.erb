@@ -1,16 +1,25 @@
-<h1>Edit <%=@ninja.ninja_name%></h1>
-<form class="" action="ninjas/:id" method="patch">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
-    <p><label for="first_name">First Name</label>
-    <input  name="ninja[first_name]" type="text" id="first_name" value="<%=@ninja.first_name%>"></p>
-    <p><label for="last_name">Last Name</label>
-    <input  name="ninja[last_name]" type="text" id="last_name" value="<%=@ninja.last_name%>"></p>
-    <p><label for="ninja_name">Ninja Name</label>
-   	<input  name="ninja[ninja_name]" type="text" id="ninja_name" value="<%=@ninja.ninja_name%>"></p>
-    <p><label for="ninja_name">Email</label>
-    <input  name="ninja[email]" type="email" id="ninja_name" value="<%=@ninja.email%>"></p>
-    <p><label for="password">Password</label>
-    <input name="ninja[password]" type="password" id="password" value="<%=@ninja.password%>"></p>
-    <input type="submit" value="Register">
-</form>
-</form>
+<div id="project_name">
+  <h1>Edit</h1>
+  <div id="project_holder">
+    <h2><%=@ninja.ninja_name%></h2>
+    <form class="" action="/ninjas/<%=@ninja.id%>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+      <p><label for="first_name">First Name</label>
+      <input  name="ninja[first_name]" type="text" id="first_name" value="<%=@ninja.first_name%>"></p>
+      <p><label for="last_name">Last Name</label>
+      <input  name="ninja[last_name]" type="text" id="last_name" value="<%=@ninja.last_name%>"></p>
+      <p><label for="ninja_name">Ninja Name</label>
+   	  <input  name="ninja[ninja_name]" type="text" id="ninja_name" value="<%=@ninja.ninja_name%>"></p>
+      <p><label for="location">Location</label>
+   	  <input  name="ninja[location]" type="text" id="location" value="<%=@ninja.location%>"></p>
+      <p><label for="ninja_name">Email</label>
+      <input  name="ninja[email]" type="email" id="ninja_name" value="<%=@ninja.email%>"></p>
+      <p><label for="password">Password</label>
+      <input name="ninja[password]" type="password" id="password" value=""></p>
+      <p><label for="confirm_password">Confirm Password</label>
+      <input name="ninja[password_confirmation]" type="password" id="password_confirmation" value=""></p>
+      <input type="submit" value="Save Changes">
+    </form>
+  </div>
+</div>
