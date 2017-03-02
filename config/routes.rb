@@ -24,8 +24,9 @@ Rails.application.routes.draw do
 
   delete 'ninjas/:id' => 'ninjas#destroy'
 
-#28739D
+
   # Project Routes
+
   get 'projects' => 'projects#index'
 
   get 'projects/new' => 'projects#new'
@@ -50,9 +51,9 @@ Rails.application.routes.draw do
 
   # Messages Routes
 
-  get 'messages' => 'messages#index'
+  get 'messages/:id/new' => 'messages#new'
 
-  post 'messages' => 'messages#create'
+  post 'messages/:id' => 'messages#create'
 
   get 'messages/:id' => 'messages#show'
 

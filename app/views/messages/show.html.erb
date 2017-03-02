@@ -1,0 +1,8 @@
+<h1>your messages</h1>
+<% @messages.each do |message|%>
+  <p>From: <%=message.ninja.ninja_name%></p>
+  <p>Message: <%=message.content%></p>
+  <p>Sent on: <%=message.created_at%></p>
+  <a href="#">Reply</a>
+  <a href="#">Add to Team</a>
+<%end%>

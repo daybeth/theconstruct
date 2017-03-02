@@ -1,12 +1,15 @@
 class MessagesController < ApplicationController
-  def index
-    @messages = Message.all
-  end
 
   def create
+    ninja = Ninja.find(session[:user_id])
+    creator = Ninja.find(params[:id])
+
+    Message.create(ninja_id:ninja.id, receiver_id:creator.id, content:params[:content])
+    redirect_to '/projects'
   end
 
   def new
+    @creator = Ninja.find(params[:id])
   end
 
   def edit
@@ -16,6 +19,9 @@ class MessagesController < ApplicationController
   end
 
   def show
+    ninja = Ninja.find(session[:user_id])
+    @messages = Message.where(receiver_id:ninja.id)
+
   end
 
   def destroy

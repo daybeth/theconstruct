@@ -1,2 +1,9 @@
-<h1>Ninjas#show</h1>
-<p>Find me in app/views/ninjas/show.html.erb</p>
+<p>picture</p>
+<h3><%=@ninja.ninja_name%></h3>
+<h3>First Name: <%=@ninja.first_name%></h3>
+<h3>Last Name: <%=@ninja.last_name%></h3>
+<h4>Location: <%=@ninja.location%></h4>
+<h4>Own Projects: <%=@own_projects.count%></h4>
+<h4>On Team: <%=@team_projects.count%></h4>
+<a href="/messages/<%=@ninja.id%>">Messages</a>
+<a href="/projects">Back</a>

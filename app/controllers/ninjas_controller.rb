@@ -1,6 +1,6 @@
 class NinjasController < ApplicationController
-   before_action :require_login, except:[:new,:create]
-   before_action :require_current_user, except:[:new,:create]
+   # before_action :require_login, except:[:new,:create]
+   # before_action :require_current_user, except:[:new,:create]
   def new
   end
   def create
@@ -24,6 +24,10 @@ class NinjasController < ApplicationController
   end
 
   def show
+    @ninja = Ninja.find(params[:id])
+    @own_projects = Project.where(ninja_id:@ninja)
+    @team_projects = Team.where(ninja_id:@ninja)
+
   end
   private
   def ninja_params
