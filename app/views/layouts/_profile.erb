@@ -1,0 +1,12 @@
+<div id="user_info" class="transition">
+	<h1 id="your_name"><a href="/ninjas/<%= @ninja.id%>" class="transition"><%=@ninja.ninja_name%></a></h1>
+	<a href="/ninjas/<%= @ninja.id%>" class="transition"><%= image_tag("photoholder.jpg", height: '150', width: '150', :alt => "photo", :id=>"photo") %></a><br>
+		<p>Name:<a><%=@ninja.first_name%></a></p>
+		<p>Last Name:<%=@ninja.last_name%></p>
+		<p>Location:<%=@ninja.location%></p>
+		<p>Own Projects:<%=@own_projects.count%></p>
+		<p id="margin_botton">On team Projects:<%=@team_projects.count%></p>
+	<a href="/messages/<%=@ninja.id%>" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br>
+	<a href="https://github.com/" class="transition"><%= image_tag("github.gif", height: '80', width: '80', :alt => "git", :id=>"git") %></a><br>
+	<a href="https://learn.codingdojo.com/signin#" id="dojo" class="transition"><%= image_tag("CD.gif", height: '100', width: '100', :alt => "CD", :id=>"CD") %></a><br>
+</div>
