@@ -2,33 +2,39 @@
  <a  class="back_link" href="/projects/stack/all">Back</a>
 	<div id="project_holder">
 	 <h2>Project Name:<%= @project.name%> </h2>
-		<p>By <a  class="transition" href="/ninjas/<%=@project.ninja.id%>"><b><%=@project.ninja.ninja_name%></b></a></p>
+		<% if current_user.id == @creator %>
+		  <a class="right_click" href="/projects/<%=@project.id%>/edit">Edit</a><br><br>
+		  <a class="right_click" data-method="delete" href="/projects/<%=@project.id%>">Delete</a><br><br>
+	 <% end %>
+	 <div class="project_info">
+	 	<p>By <a  class="transition" href="/ninjas/<%=@project.ninja.id%>"><b><%=@project.ninja.ninja_name%></b></a></p>
 		<b>Description</b>
 		<p><%= @project.description%></p>
-		<h1>Wireframe</h1>
-		<p>Team Members:
+		<p>Team Members:</p>
 			<% @team.each do |tm|%>
 		 		<a href="/ninjas/<%=tm.ninja.id%>"><%= tm.ninja.ninja_name%></a>	
-			<% end %></p>
+			<% end %><br><br>
 		<form action="/messages/<%=@creator%>/new"  class="transition" method="fet">
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
-		<input type="hidden" name="project_id" value="<%=@project.id%>" >
-		<input class="button" cursive; type="submit" value="Join the team">
-	</form>
-
-	 <% if current_user.id == @creator %>
-	  <a href="/projects/<%=@project.id%>/edit">Edit Project</a><br>
-	  <a data-method="delete" href="/projects/<%=@project.id%>">Delete Project</a><br>
-	 <% end %>
-		<b>Leave a comment</b>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+			<input type="hidden" name="project_id" value="<%=@project.id%>" >
+			<input class="button" class="button" cursive; type="submit" value="Join the team">
+		</form>
+		</div>
+			<div class="wireframe"> <h4>Wireframe holder</h4></div>
+		<p><b>Leave a comment</b></p>
 		<form  class="transition" action="/comments/<%=@project.id%>" method="post">
 			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
 			<p><label for="comment"></label>
-			<textarea name="content" id="comment" cols="30" rows="3"></textarea></p>
+			<textarea name="content" id="comment" cols="35" rows="2"></textarea></p>
 			<input class="button" type="submit" value="Send comment">
 		</form>
-	<% @comments.each do |c|%>
-	<p><%=c.ninja.ninja_name%> said, <%=c.content%><%=c.created_at%></p>
+		<div class="overflow">
+	<% @comments.reverse.each do |c|%>
+	<%if @comment %>
+	<p><%=c.ninja.ninja_name%> said on <%=c.created_at.in_time_zone("Pacific Time (US & Canada)").strftime(" %b, %A %Y %I:%M%p")%></p>	
+	<p><%=c.content%></p>
 	<%end%>
+	<% end %>
+	</div>
 	</div>
 </div>

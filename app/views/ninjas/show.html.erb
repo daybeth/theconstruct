@@ -9,9 +9,9 @@
 			<p>Location:  <%=@no_session.location%></p>
 			<p>Own Projects:  <%=@own_projects.count%></p>
 			<p id="margin_botton">On team Projects:  <%=@team_projects.count%></p>
-			<a href="/messages/<%=@no_session.id%>" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br>
+			<a href="/messages/<%=@no_session.id%>" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br><br>
 		<% if current_user.id == @no_session.id %>
-		  <a href="/ninjas/<%=@no_session.id%>/edit">Edit Profile</a><br>
+		  <a href="/ninjas/<%=@no_session.id%>/edit">Edit Profile</a><br><br>
 		  <a data-method="delete" href="/ninjas/<%=@no_session.id%>">Delete Profile</a>
 		 <% end %>
 	</div>
