@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   	if ninja && ninja.authenticate(params[:password])
   		session[:user_id] = ninja.id
-  		redirect_to "/projects"
+  		redirect_to "/projects/stack/all"
   	else
   		flash[:errors] = ["Invalid combination"]
   		redirect_to :back
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-  	reset_session  	
+  	reset_session
   	redirect_to :root
 
   end

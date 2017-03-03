@@ -8,7 +8,7 @@ class NinjasController < ApplicationController
 
    if ninja.save
       flash[:success] = "You have registered successfully. Please Log in"
-      redirect_to "/projects"
+      redirect_to "/projects/stack/all"
     else
       flash[:errors] = ninja.errors.full_messages
       redirect_to :back

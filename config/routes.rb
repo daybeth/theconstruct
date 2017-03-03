@@ -27,9 +27,11 @@ Rails.application.routes.draw do
 
   # Project Routes
 
-  get 'projects' => 'projects#index'
-
   get 'projects/new' => 'projects#new'
+
+  get 'projects/stack/:stack' => 'projects#index'
+
+  get 'projects/ninja/:id'  => 'projects#ninja'
 
   post 'projects' => 'projects#create'
 
@@ -47,7 +49,7 @@ Rails.application.routes.draw do
   post 'comments' => 'comments#create'
 
   delete 'comments/:id' => 'comments#destroy'
-  
+
 
   # Messages Routes
 

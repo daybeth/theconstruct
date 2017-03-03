@@ -1,13 +1,13 @@
 <div id="recent_project" class="transition">
 
-	<h3 id="recent_p_title">Recent Projects</h3>
+	<h3 id="recent_p_title">My Projects</h3>
 	<a id="new_project_link" href="/projects/new">Create a new Project</a>
 	<div id="project_holder" class="transition">
 	<% @projects.each do |project| %>
 	<p>
 		Name:<a href="/projects/<%= project.id%>"><%=project.name%></a>
 		Stack:<b class="white_font"><%=project.stack%></b>
-	 	Location:<b class="white_font"><%=project.ninja.location%></b>
+	 	Location: <b class="white_font"><%=project.ninja.location%></b>
 	</p>
 	<hr>
 	<%end%>

@@ -1,20 +1,45 @@
 class ProjectsController < ApplicationController
-  # before_action :require_login
-  # before_action :require_current_user ,only:[:edit,:update, :destroy]
+  before_action :require_login
+  before_action :require_current_user ,only:[:edit,:update, :destroy]
+
+
+#Displays all and projects according to stack
   def index
-    @projects = Project.all
+    if params[:stack] == 'all'
+      @projects = Project.all
+    else
+      @projects = Project.where(stack: params[:stack])
+    end
     @ninja = Ninja.find(session[:user_id])
     @own_projects = Project.where(ninja_id:@ninja)
     @team_projects = Team.where(ninja_id:@ninja)
   end
 
+
+# Displays all of a single ninjas projects
+def ninja
+  ninja = Ninja.find(params[:id])
+  @projects = Project.where(ninja_id:ninja.id)
+  @ninja = Ninja.find(session[:user_id])
+  @own_projects = Project.where(ninja_id:@ninja)
+  @team_projects = Team.where(ninja_id:@ninja)
+end
+
+
+
+
+#View to form for creating a new project
   def new
-    @projects = Project.all
     @ninja = Ninja.find(session[:user_id])
     @own_projects = Project.where(ninja_id:@ninja)
     @team_projects = Team.where(ninja_id:@ninja)
   end
 
+
+
+
+
+#Method to create a new project in the database
   def create
     ninja = Ninja.find(session[:user_id])
     project = ninja.projects.new(name: params[:name], stack: params[:stack], description: params[:description], progress: params[:progress])
@@ -26,12 +51,18 @@ class ProjectsController < ApplicationController
     end
   end
 
+
+
+#View to edit project details
   def edit
   end
 
+#Method to update project details
   def update
   end
 
+
+#View to a single project
   def show
     @comments = Comment.all
     @project = Project.find(params[:id])
@@ -41,6 +72,9 @@ class ProjectsController < ApplicationController
     @team_projects = Team.where(ninja_id:@ninja)
   end
 
+#Method to delete a project form the database
   def destroy
   end
+
+
 end
