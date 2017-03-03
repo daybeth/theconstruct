@@ -12,13 +12,13 @@
  *= require_tree .
  *= require_self
  */
- 
+
  body{
  	background-color: #d6d7d8;
  	font-family: 'Press Start 2P', cursive;
  	background-image: url("mainBKGD.gif");
-  background-size: 100%;
  	background-repeat: no-repeat;
+  background-attachment: fixed;
  	margin: 0 auto;
   width: 100%;
   height: 100%;
@@ -75,27 +75,29 @@
   text-align: center;
  }
  #dashboardtop{
- 	height: 70px;
+ 	height: 10%;
  	width: 100%;
  	background-color: #107099;
   padding-bottom: 5px;
  }
  #construct{
- 	margin-left: 20px;
- 	margin-right: 230px;
+   position: relative;
+ 	margin-left: 5px;
+ 	margin-right: 170px;
  	width: 300px;
   height: 60px;
  }
 
  #swift, #ruby, #php, #js, #csharp, #python{
 position: relative;
-margin-left: 20px;
 margin-right: 20px;
-width: 55px;
-height: 55px
+width: 45px;
+height: 45px;
 /*margin-top:0px;*/
  }
  #user_info{
+  display: inline-block;
+  position: relative;
  	width: 180px;
  	height: 100%;
  	background-color: #1da4f2;
@@ -124,17 +126,18 @@ height: 55px
  }
 
  #recent_project, #project_name, #recent_profile{
+  position: relative;
  	margin-top: -550px;
- 	margin-left: 400PX;
-  font-size: 13px;
+ 	margin-left: 24%;
+  font-size: 10px;
  }
  #project_holder{
- 	width: 70%;
- 	height: 440px;
-  background: rgba(255,255,255,0.4);
+ 	width: 90%;
+ 	height: 90%;
+  background: rgba(38,50,57,0.9);
  	border-radius: 20px;
- 	padding: 20px 10px;
-  margin: 10px;
+ 	padding: 5px 5px;
+  margin-left:10px;
  }
  a{
   color: white
@@ -152,9 +155,10 @@ height: 55px
  }
  #project_holder p, a, input{
   opacity: none;
-  font-family: 'Press Start 2P', cursive;
+
  }
  #profile_holder{
+  position: relative;
  	width: 400px;
  	height: 400px;
  	background-color: #f1f7ad;
@@ -168,4 +172,18 @@ height: 55px
  }
  .back_link{
   margin-left: 600px;
+ }
+ .button{
+  height: 25px;
+  font-size: 10px;
+  margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+ }
+ #pagination{
+  margin-top: 25px;
+  margin-left: 200px;
+ }
+
+ #project_list_element{
+   padding-bottom: 12px;
  }

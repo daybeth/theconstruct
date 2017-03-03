@@ -1,5 +1,6 @@
 <div id="project_name">
   <h3>Create a Project</h3>
+    <a class="back_link" href="/projects/stack/all">Back</a>
   <div id="project_holder">
   <form class="form-horizontal" action="/projects" method="post">
   	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
@@ -14,14 +15,13 @@
   	   	<option value="CSharp">C#</option>
   	   	<option value="PHP">PHP</option>
      </select></p>
-      <p><label for="description">Description</label>
-     	<textarea name="description" id="" cols="30" rows="10"></textarea></p>
+      <p><label for="description">Description</label></p>
+     	<textarea name="description" id="" cols="30" rows="10"></textarea>
       <p><label for="progress">Progress</label>
       <input  name="progress" type="number" id="progress" placeholder="progress">
       <p><label for="wireframe">wireframe</label>
       <input name="wireframe" type="text" id="wireframe" placeholder="wireframe"></p>
-      <input type="submit" value="Create Project">
+      <input class="button" type="submit" value="Create Project">
   </form>
-  <a href="/projects">Back</a>
   </div>
   </div>

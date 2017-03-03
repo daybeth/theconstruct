@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   # Comments Routes
 
-  post 'comments' => 'comments#create'
+  post 'comments/:id' => 'comments#create'
 
   delete 'comments/:id' => 'comments#destroy'
 

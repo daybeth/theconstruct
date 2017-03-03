@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :require_login
 
   def create
     ninja = Ninja.find(session[:user_id])
@@ -16,13 +17,12 @@ class MessagesController < ApplicationController
   end
 
   def show
-    ninja = Ninja.find(session[:user_id])
-    @messages = Message.where(receiver_id:ninja.id)
     @ninja = Ninja.find(session[:user_id])
+    @messages = Message.where(receiver_id:@ninja.id)
     @own_projects = Project.where(ninja_id:@ninja)
     @team_projects = Team.where(ninja_id:@ninja)
     @project = Project.find(params[:id])
-    @team = Team.find_by(ninja_id: ninja, project_id: @project)
+    @team = Team.find_by(ninja_id: @ninja, project_id: @project)
   end
 
   def destroy

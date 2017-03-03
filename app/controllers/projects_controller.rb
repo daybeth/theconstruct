@@ -6,9 +6,9 @@ class ProjectsController < ApplicationController
 #Displays all and projects according to stack
   def index
     if params[:stack] == 'all'
-      @projects = Project.all
+      @projects = Project.all.paginate(page:params[:page], per_page: 8)
     else
-      @projects = Project.where(stack: params[:stack])
+      @projects = Project.where(stack: params[:stack]).paginate(page:params[:page], per_page: 8)
     end
     @ninja = Ninja.find(session[:user_id])
     @own_projects = Project.where(ninja_id:@ninja)
@@ -35,10 +35,6 @@ end
     @team_projects = Team.where(ninja_id:@ninja)
   end
 
-
-
-
-
 #Method to create a new project in the database
   def create
     ninja = Ninja.find(session[:user_id])
@@ -50,8 +46,6 @@ end
       redirect_to :back
     end
   end
-
-
 
 #View to edit project details
   def edit
@@ -82,13 +76,18 @@ end
     @ninja = Ninja.find(session[:user_id])
     @own_projects = Project.where(ninja_id:@ninja)
     @team_projects = Team.where(ninja_id:@ninja)
+    @team = Team.where(project:@project)
   end
 
 #Method to delete a project form the database
   def destroy
     project = Project.find(params[:id])
     project.destroy
-    redirect_to '/projects'
+    redirect_to '/projects/stack/all'
+  end
+
+  def paginate
+
   end
 
 

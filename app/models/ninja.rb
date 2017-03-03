@@ -5,6 +5,7 @@ class Ninja < ActiveRecord::Base
   has_many :teams, dependent: :destroy
   has_many :projects_joined, through: :teams, source: :project, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_attached_file :image, styles: {small: "64x64", med:"100x100", large:"200x200"}
   has_secure_password
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
   validates :first_name, :last_name ,:ninja_name, presence: true, length: { in: 2..20 } ,:on => :create

@@ -4,12 +4,16 @@
 	<a id="new_project_link" href="/projects/new">Create a new Project</a>
 	<div id="project_holder" class="transition">
 	<% @projects.each do |project| %>
-	<p>
+	<p id="project_list_element">
 		Name:<a href="/projects/<%= project.id%>"><%=project.name%></a>
 		Stack:<b class="white_font"><%=project.stack%></b>
 	 	Location:<b class="white_font"><%=project.ninja.location%></b>
 	</p>
 	<hr>
 	<%end%>
+	<div id="pagination">
+		<%= will_paginate @projects %>
+
+	</div>
 	</div>
 </div>
