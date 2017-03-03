@@ -3,7 +3,7 @@
 	<div id="project_holder">
 	 <h2>Project Name:<%= @project.name%> </h2>
 		<% if current_user.id == @creator %>
-		  <a class="right_click" href="/projects/<%=@project.id%>/edit">Edit</a><br><br>
+		  <a class="right_click" href="/projects/<%=@project.id%>/edit">Edit</a> <br><br>
 		  <a class="right_click" class="delete" data-method="delete" href="/projects/<%=@project.id%>">Delete</a><br><br>
 	 <% end %>
 	 <div class="project_info">

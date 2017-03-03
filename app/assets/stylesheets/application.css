@@ -18,7 +18,7 @@
  	font-family: 'Press Start 2P', cursive;
  	background-image: url("mainBKGD.gif");
  	background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   background-attachment: fixed;
  	margin: 0 auto;
   width: 100%;
@@ -194,6 +194,7 @@ height: 45px;
   width: 80%;
   margin-left: 60px;
  }
+
 .right_click{
   margin-left: 90%;
   display: inline-block;

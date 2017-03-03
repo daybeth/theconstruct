@@ -7,12 +7,12 @@
 	  <p>Project: <%=message.project.name%></p>
 	  <p>Message: <%=message.content%></p>
 	  <p>Sent on: <%=message.created_at.in_time_zone("Pacific Time (US & Canada)").strftime(" %b, %A %Y %I:%M%p")%></p>
-	  <a class="transition" href="/messages/<%=message.ninja.id%>/new">Reply</a>
+	  <a class="transition" href="/messages/<%=message.ninja.id%>/new">Reply</a><br><br>
 	  <form action="/teams/<%=message.id%>" method="post">
 	  	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
 	  	<a href="#" onclick="this.parentNode.submit()">Add to the team</a>
-	  </form>
-	  <a data-method="delete" class="transition" href="/messages/<%=message.id%>">Delete</a>
+	  </form><br>
+	  <a data-confirm="Are you sure?" data-method="delete" class="transition" href="/messages/<%=message.id%>">Delete</a>
 	<%end%>
 	</div>
 </div>

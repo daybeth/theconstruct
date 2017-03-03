@@ -3,7 +3,7 @@
 	<h3 id="recent_p_title">Recent Projects</h3>
 	<a id="new_project_link" href="/projects/new">Create a new Project</a>
 	<div id="project_holder" class="transition">
-	<% @projects.each do |project| %>
+	<% @projects.reverse.each do |project| %>
 	<p id="project_list_element">
 		Name:<a href="/projects/<%= project.id%>"><%=project.name%></a>
 		Stack:<b class="white_font"><%=project.stack%></b>

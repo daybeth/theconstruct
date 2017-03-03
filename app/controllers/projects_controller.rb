@@ -1,8 +1,5 @@
 class ProjectsController < ApplicationController
   before_action :require_login
-  before_action :require_current_user ,only:[:edit,:update, :destroy]
-
-
 #Displays all and projects according to stack
   def index
     if params[:stack] == 'all'
@@ -66,7 +63,6 @@ end
        redirect_to :back
      end
   end
-
 
 #View to a single project
   def show
