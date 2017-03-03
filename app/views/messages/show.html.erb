@@ -12,7 +12,7 @@
 	  	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
 	  	<a href="#" onclick="this.parentNode.submit()">Add to the team</a>
 	  </form><br>
-	  <a data-confirm="Are you sure?" data-method="delete" class="transition" href="/messages/<%=message.id%>">Delete</a>
+	  <a  data-method="delete" href="/messages/<%=message.id%>">Delete</a>
 	<%end%>
 	</div>
 </div>
