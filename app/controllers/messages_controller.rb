@@ -25,6 +25,7 @@ class MessagesController < ApplicationController
     @team_projects = Team.where(ninja_id:@ninja)
     @project = @messages.project
     @team = Team.find_by(ninja_id: @ninja, project_id: @project)
+    
   end
 
   def destroy

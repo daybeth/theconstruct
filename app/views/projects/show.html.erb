@@ -4,7 +4,7 @@
 	 <h2>Project Name:<%= @project.name%> </h2>
 		<% if current_user.id == @creator %>
 		  <a class="right_click" href="/projects/<%=@project.id%>/edit">Edit</a><br><br>
-		  <a class="right_click" data-method="delete" href="/projects/<%=@project.id%>">Delete</a><br><br>
+		  <a class="right_click" class="delete" data-method="delete" href="/projects/<%=@project.id%>">Delete</a><br><br>
 	 <% end %>
 	 <div class="project_info">
 	 	<p>By <a  class="transition" href="/ninjas/<%=@project.ninja.id%>"><b><%=@project.ninja.ninja_name%></b></a></p>
@@ -29,11 +29,10 @@
 			<input class="button" type="submit" value="Send comment">
 		</form>
 		<div class="overflow">
+		<h3>Comments:</h3>
 	<% @comments.reverse.each do |c|%>
-	<%if @comment %>
-	<p><%=c.ninja.ninja_name%> said on <%=c.created_at.in_time_zone("Pacific Time (US & Canada)").strftime(" %b, %A %Y %I:%M%p")%></p>	
+	<p>* <%=c.ninja.ninja_name%> said on <%=c.created_at.in_time_zone("Pacific Time (US & Canada)").strftime(" %b, %A %Y %I:%M%p")%></p>	
 	<p><%=c.content%></p>
-	<%end%>
 	<% end %>
 	</div>
 	</div>

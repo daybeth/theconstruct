@@ -70,10 +70,8 @@ end
 
 #View to a single project
   def show
-    @comments = Comment.all
-
     @project = Project.find(params[:id])
-    @comment = Comment.where(project_id:@project.id)
+    @comments = Comment.where(project_id:@project.id)
     @creator = @project.ninja_id
     @ninja = Ninja.find(session[:user_id])
     @own_projects = Project.where(ninja_id:@ninja)
