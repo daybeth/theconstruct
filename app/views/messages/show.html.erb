@@ -2,6 +2,7 @@
 	<a class="back_link" class="transition" href="/projects/stack/all">Back</a>
 	<div id="project_holder">
 		<h3>Your messages</h3>
+	<div class="overflow_messages">
 	<% @messages.reverse.each do |message|%>
 	  <p>From: <%=message.ninja.ninja_name%></p>
 	  <p>Project: <%=message.project.name%></p>
@@ -15,4 +16,5 @@
 	  <a  data-method="delete" href="/messages/<%=message.id%>">Delete</a>
 	<%end%>
 	</div>
+</div>
 </div>
