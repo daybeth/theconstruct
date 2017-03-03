@@ -3,11 +3,11 @@ class TeamsController < ApplicationController
 	def create
 		message = Message.find(params[:id])
 		ninja = message.ninja
-		project = Project.find(params[:project_id])
+		project = message.project
 		existing = Team.where(:ninja => ninja, :project => project)
 		if existing
 			team = Team.create(:ninja => ninja, :project => project)
-			message.destroy
+			# message.destroy
 			redirect_to "/projects/#{project.id}"
 
 		else
