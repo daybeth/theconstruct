@@ -6,7 +6,7 @@
 		<p>Location:<%=@ninja.location%></p>
 		<p>Own Projects:<%=@own_projects.count%></p>
 		<p id="margin_botton">On team Projects:<%=@team_projects.count%></p>
-		<a href="/projects/ninja/<%=@ninja.id%>"><button type="button" name="button">View My Projects</button></a>
+	<a id="button_profile" href="/projects/ninja/<%=@ninja.id%>">View My Projects</a>
 	<a href="/messages/<%=@ninja.id%>" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br>
 	<a href="https://github.com/" class="transition"><%= image_tag("github.gif", height: '80', width: '80', :alt => "git", :id=>"git") %></a><br>
 	<a href="https://learn.codingdojo.com/signin#" id="dojo" class="transition"><%= image_tag("CD.gif", height: '100', width: '100', :alt => "CD", :id=>"CD") %></a><br>

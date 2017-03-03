@@ -133,7 +133,7 @@ height: 55px
  	height: 440px;
   background: rgba(255,255,255,0.4);
  	border-radius: 20px;
- 	padding: 20px 10px;
+ 	padding: 30px 30px;
   margin: 10px;
  }
  a{
@@ -152,7 +152,7 @@ height: 55px
  }
  #project_holder p, a, input{
   opacity: none;
-  font-family: 'Press Start 2P', cursive;
+
  }
  #profile_holder{
  	width: 400px;
@@ -169,3 +169,14 @@ height: 55px
  .back_link{
   margin-left: 600px;
  }
+ .button{
+  height: 25px;
+  font-size: 10px;
+  margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+ }
+ #pagination{
+  margin-top: 70px;
+  margin-left: 200px;
+ }
+ 
