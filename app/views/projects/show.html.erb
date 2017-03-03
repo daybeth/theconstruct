@@ -1,24 +1,32 @@
  <div id="project_name">
-	<h2>Project Name:<%= @project.name%> </h2>
-
-<div id="project_holder">
-	<p>By <a  class="transition" href="/ninjas/<%=@project.ninja.id%>"><b><%=@project.ninja.ninja_name%></b></a></p>
-	<b>Description</b>
-	<p><%= @project.description%></p>
-	<h1>Wireframe</h1>
-	<p><a  class="transition" href="/messages/<%=@creator%>/new">Send a message to Join team</a></p>
-	<b>Leave a comment</b>
-	<form  class="transition" action="/comments" method="post">
-		<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-		<p><label for="comment"></label>
-		<textarea name="content" id="comment" cols="30" rows="5"></textarea></p>
-		<input type="submit" value="Send comment">
+ <a  class="transition" class="back_link" href="/projects/stack/all">Back</a>
+	<div id="project_holder">
+	 <h2>Project Name:<%= @project.name%> </h2>
+		<p>By <a  class="transition" href="/ninjas/<%=@project.ninja.id%>"><b><%=@project.ninja.ninja_name%></b></a></p>
+		<b>Description</b>
+		<p><%= @project.description%></p>
+		<h1>Wireframe</h1>
+		<form action="/messages/<%=@creator%>/new"  class="transition" method="fet">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+		<input type="hidden" name="project_id" value="<%=@project.id%>" >
+		<input type="submit" value="Join the team">
 	</form>
 
-<% @comments.each do |c|%>
-<p><%=c.ninja.ninja_name%> said, <%=c.content%><%=c.created_at%></p>
-<%end%>
+	 <% if current_user.id == @creator %>
+	  <a href="/projects/<%=@project.id%>/edit">Edit Project</a><br>
+	  <a data-method="delete" href="/projects/<%=@project.id%>">Delete Project</a><br>
+	 <% end %>
+		<b>Leave a comment</b>
+		<form  class="transition" action="/comments" method="post">
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+			<p><label for="comment"></label>
+			<textarea name="content" id="comment" cols="30" rows="5"></textarea></p>
+			<input type="submit" value="Send comment">
+		</form>
 
-<a  class="transition" href="/projects/stack/all">Back</a>
-</div>
+
+	<% @comments.each do |c|%>
+	<p><%=c.ninja.ninja_name%> said, <%=c.content%><%=c.created_at%></p>
+	<%end%>
+	</div>
 </div>

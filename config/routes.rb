@@ -43,6 +43,16 @@ Rails.application.routes.draw do
 
   delete 'projects/:id' => 'projects#destroy'
 
+  get 'projects/swift' => 'projects#swift'
+
+  get 'projects/php' => 'projects#php'
+
+  get 'projects/js' => 'projects#js'
+
+  get 'projects/ror' => 'projects#ror'
+
+  get 'projects/csharp' => 'projects#csharp'
+
 
   # Comments Routes
 
@@ -60,6 +70,12 @@ Rails.application.routes.draw do
   get 'messages/:id' => 'messages#show'
 
   delete 'messages/:id' => 'messages#destroy'
+
+    # Teams Routes
+
+  post 'teams/:id' => 'teams#create'
+
+  delete 'teams/:id' => 'teams#destroy'
 
 
 end

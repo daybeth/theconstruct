@@ -55,10 +55,22 @@ end
 
 #View to edit project details
   def edit
+    @project = Project.find(params[:id])
+    @ninja = Ninja.find(session[:user_id])
+    @own_projects = Project.where(ninja_id:@ninja)
+    @team_projects = Team.where(ninja_id:@ninja)
   end
 
 #Method to update project details
   def update
+    project = Project.find(params[:id])
+    if project.update(name: params[:name], description: params[:description], stack: params[:stack], progress: params[:progress])
+       flash[:success] = "Project Updated!"
+       redirect_to "/projects/#{project.id}"
+     else
+       flash[:errors] = project.errors.full_messages
+       redirect_to :back
+     end
   end
 
 
@@ -74,6 +86,9 @@ end
 
 #Method to delete a project form the database
   def destroy
+    project = Project.find(params[:id])
+    project.destroy
+    redirect_to '/projects'
   end
 
 
