@@ -18,6 +18,7 @@
  	font-family: 'Press Start 2P', cursive;
  	background-image: url("mainBKGD.gif");
  	background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-attachment: fixed;
  	margin: 0 auto;
   width: 100%;
@@ -187,13 +188,14 @@ height: 45px;
 
  #project_list_element{
    padding-bottom: 12px;
-
+}
 
 
 .overflow{
   overflow: scroll;
   height: 70px;
  }
+
 .right_click{
   margin-left: 580px;
   display: inline-block;
