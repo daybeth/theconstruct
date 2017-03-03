@@ -26,9 +26,6 @@ class NinjasController < ApplicationController
      end
   end
 
-  def destroy
-  end
-
   def edit
     @ninja = Ninja.find(params[:id])
     @own_projects = Project.where(ninja_id:@ninja)
@@ -37,11 +34,19 @@ class NinjasController < ApplicationController
   end
 
   def show
-    @ninja = Ninja.find(params[:id])
+    @no_session = Ninja.find(params[:id])
+    @ninja= Ninja.find(session[:user_id])
     @own_projects = Project.where(ninja_id:@ninja)
     @team_projects = Team.where(ninja_id:@ninja)
 
   end
+
+  def destroy
+    ninja = Ninja.find(session[:user_id])
+    ninja.destroy
+    redirect_to :root
+  end
+
   private
   def ninja_params
     params.require(:ninja).permit(:first_name, :last_name, :location, :ninja_name, :email, :password, :password_confirmation)

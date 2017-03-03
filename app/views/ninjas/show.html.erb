@@ -1,18 +1,17 @@
 <div id="project_name">
-
-<div id="project_holder">
-	<h1 id="your_name"><a href="/ninjas/<%= @ninja.id%>" class="transition"><%=@ninja.ninja_name%></a></h1>
-
-	<a href="/ninjas/<%= @ninja.id%>" class="transition"><%= image_tag("photoholder.jpg", height: '150', width: '150', :alt => "photo", :id=>"photo") %></a><br>
-		<p>Name:<a><%=@ninja.first_name%></a></p>
-		<p>Last Name:<%=@ninja.last_name%></p>
-		<p>Location:<%=@ninja.location%></p>
-		<p>Own Projects:<%=@own_projects.count%></p>
-		<p id="margin_botton">On team Projects:<%=@team_projects.count%></p>
-	<a href="/messages/<%=@ninja.id%>" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br>
-  <a href="/ninjas/<%=@ninja.id%>/edit">Edit</a>
-  <a href="/projects">Back</a>
-	<a href="/ninjas/<%=@ninja.id%>"></a>
+  <a class="back_link" href="/projects">Back</a>
+	<div id="project_holder">
+		<h1 id="your_name"><%=@no_session.ninja_name%></h1>
+		<%= image_tag("photoholder.jpg", height: '150', width: '150', :alt => "photo", :id=>"photo") %><br>
+			<p>Name:  <%=@no_session.first_name%></p>
+			<p>Last Name:  <%=@no_session.last_name%></p>
+			<p>Location:  <%=@no_session.location%></p>
+			<p>Own Projects:  <%=@own_projects.count%></p>
+			<p id="margin_botton">On team Projects:  <%=@team_projects.count%></p>
+			<a href="/messages/<%=@no_session.id%>" class="transition"><%= image_tag("Mail.gif", height: '80', width: '80', :alt => "mail", :id=>"mail") %></a><br>
+		<% if current_user.id == @no_session.id %>
+		  <a href="/ninjas/<%=@no_session.id%>/edit">Edit Profile</a><br>
+		  <a data-method="delete" href="/ninjas/<%=@no_session.id%>">Delete Profile</a>
+		 <% end %>
 	</div>
-
-	</div>
+</div>

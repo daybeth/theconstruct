@@ -27,9 +27,21 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @project = Project.find(params[:id])
+    @ninja = Ninja.find(session[:user_id])
+    @own_projects = Project.where(ninja_id:@ninja)
+    @team_projects = Team.where(ninja_id:@ninja)
   end
 
   def update
+    project = Project.find(params[:id])
+    if project.update(name: params[:name], description: params[:description], stack: params[:stack], progress: params[:progress])
+       flash[:success] = "Project Updated!"
+       redirect_to "/projects/#{project.id}"
+     else
+       flash[:errors] = project.errors.full_messages
+       redirect_to :back
+     end
   end
 
   def show
@@ -42,20 +54,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-  end
-  def swift
-    
-  end
-   def php
-    
-  end
-   def ror
-    
-  end
-   def csharp
-    
-  end
-   def js
-    
+    project = Project.find(params[:id])
+    project.destroy
+    redirect_to '/projects'
   end
 end

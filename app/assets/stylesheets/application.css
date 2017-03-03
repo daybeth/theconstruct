@@ -62,7 +62,6 @@
   background-repeat: no-repeat;
   background-size: 100%;
   padding:15px 20px;
-	/*border: 2px solid blue;*/
   border-radius: 25px;
  }
  .link{
@@ -90,7 +89,7 @@
 
  #swift, #ruby, #php, #js, #csharp, #python{
 position: relative;
-margin-left: 30px;
+margin-left: 20px;
 margin-right: 20px;
 width: 55px;
 height: 55px
@@ -131,13 +130,11 @@ height: 55px
  }
  #project_holder{
  	width: 70%;
- 	height: 400px;
-/* 	background-color: #f1f7ad;*/
+ 	height: 440px;
   background: rgba(255,255,255,0.4);
-/* 	opacity: .5;*/
  	border-radius: 20px;
  	padding: 20px 10px;
-  margin-bottom: 10px;
+  margin: 10px;
  }
  a{
   color: white
@@ -153,9 +150,9 @@ height: 55px
  #recent_p_title{
   display: inline-block;
  }
- #project_holder p, a{
+ #project_holder p, a, input{
   opacity: none;
-    font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive;
  }
  #profile_holder{
  	width: 400px;
@@ -168,4 +165,7 @@ height: 55px
   #space{
   margin-top: 50px;
   margin-left: 400px;
+ }
+ .back_link{
+  margin-left: 600px;
  }

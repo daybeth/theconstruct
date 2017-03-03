@@ -1,10 +1,12 @@
-<h1>Messages</h1>
-
-<form action="/messages/<%=@creator.id%>" method="post">
-	<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-	<p><label for="message"></label>
-	<textarea name="content" id="message" cols="30" rows="10"></textarea></p>
-	<input type="submit" value="Send message">
-</form>
-
-<a href="/projects">Back</a>
+<div id="project_name">
+	<div id="project_holder"><h1>Messages</h1>
+		<form action="/messages/<%=@creator.id%>" method="post">
+			<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+			<input type="hidden" name="project_id" value="<%=@project.id%>" >
+			<p><label for="message"></label>
+			<textarea name="content" id="message" cols="30" rows="10"></textarea></p>
+			<input type="submit" value="Send message">
+		</form>
+		<a href="/projects">Back</a>
+	</div>
+</div>

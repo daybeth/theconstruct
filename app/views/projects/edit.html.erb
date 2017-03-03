@@ -1,2 +1,28 @@
-<h1>Projects#edit</h1>
-<p>Find me in app/views/projects/edit.html.erb</p>
+ <div id="project_name">
+ <h2>Edit Project</h2>
+ <a class="back_link" href="/projects/<%=@project.id%>">Back</a>
+	<div id="project_holder">
+	 <form class="form-horizontal" action="/projects/<%=@project.id%>" method="post">
+  	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+  	<input type="hidden" name="_method" value="patch">
+      <p><label for="name">Project Name</label>
+      <input  name="name" type="text" id="name" value="<%=@project.name%>"></p>
+     <p><label for="name">Stack</label>
+     <select name="stack" id="" value="<%=@project.stack%>">
+  	   	<option value="Ruby">Ruby</option>
+  	   	<option value="Mean">Mean</option>
+  	   	<option value="Python">Python</option>
+  	   	<option value="IOS">IOS</option>
+  	   	<option value="Ruby">Ruby</option>
+  	   	<option value="PHP">PHP</option>
+     </select></p>
+      <p><label for="description">Description</label></p>
+     	<textarea name="description" id="" cols="30" rows="10" value="<%=@project.description%>"></textarea></p>
+      <p><label for="progress">Progress</label>
+      <input  name="progress" type="number" id="progress" value="<%=@project.progress%>">
+      <p><label for="wireframe">wireframe</label>
+      <input name="wireframe" type="text" id="wireframe" value=""></p>
+      <input type="submit" value="Save changes">
+  </form>
+	</div>
+</div>

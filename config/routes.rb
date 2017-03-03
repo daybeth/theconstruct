@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   get 'projects/js' => 'projects#js'
 
   get 'projects/ror' => 'projects#ror'
-  
+
   get 'projects/csharp' => 'projects#csharp'
 
 
@@ -68,6 +68,12 @@ Rails.application.routes.draw do
   get 'messages/:id' => 'messages#show'
 
   delete 'messages/:id' => 'messages#destroy'
+
+    # Teams Routes
+
+  post 'teams/:id' => 'teams#create'
+
+  delete 'teams/:id' => 'teams#destroy'
 
 
 end
